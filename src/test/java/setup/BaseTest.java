@@ -1,4 +1,4 @@
-package utils;
+package setup;
 
 import static common.StaticClass.DRIVER_PATH;
 

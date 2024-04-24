@@ -6,8 +6,9 @@ import bob.fd.ui.pages.FDCalculatorPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import setup.TestContextSetUp;
 import utilities.ExcelUtil;
-import utils.TestContextSetUp;
+
 import static common.StaticClass.*;
 
 public class FDCalculatorStepDefinition{

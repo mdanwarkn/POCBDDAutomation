@@ -2,7 +2,7 @@ package stepdefinitions;
 
 import bob.fd.ui.pages.HomePage;
 import io.cucumber.java.en.Given;
-import utils.TestContextSetUp;
+import setup.TestContextSetUp;
 
 public class HomePageStepDefinition{
 
