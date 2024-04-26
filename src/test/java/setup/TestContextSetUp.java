@@ -2,6 +2,8 @@ package setup;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import bob.fd.ui.pages.FDCalculatorPage;
@@ -15,6 +17,9 @@ public class TestContextSetUp extends BaseTest{
 	public FDCalculatorPage fdCalculatorPage;
 	public Properties properties;
 	public PageObjectManager pageObjectManager;
+	public String dataProviderPath;
+	public String scenarioKey;
+	public Map<String,String> dataSetRow;
 	
 	public TestContextSetUp() throws FileNotFoundException, IOException {
 		super();

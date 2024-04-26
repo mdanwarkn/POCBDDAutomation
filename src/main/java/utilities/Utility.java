@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 public class Utility {
 
@@ -35,5 +36,13 @@ public class Utility {
 	    decimalFormat.setDecimalFormatSymbols(dfs);
 	    decimalFormat.setMaximumFractionDigits(noOfDecimalDigits);
 	    return decimalFormat;
+    }
+    
+    public static String getValueAssociatedWithTheColumn(Map<String,String> inputRow,String parameter) {
+    	if(parameter.startsWith("<") && parameter.endsWith(">")) {
+    		return inputRow.get(parameter.substring(1, parameter.length()-1));
+    	}else {
+    		return parameter;
+    	} 
     }
 }

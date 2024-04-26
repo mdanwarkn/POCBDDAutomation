@@ -6,9 +6,9 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/BOB.feature",
+        features = "src/test/resources/features",
         glue = {"stepdefinitions"},
-        tags = "@BOBTest",
+        tags = "@BOBQuarterlyPayoutTest",
         publish = true,
         dryRun = false,
         monochrome = true,
