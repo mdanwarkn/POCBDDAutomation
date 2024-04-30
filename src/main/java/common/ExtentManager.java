@@ -5,7 +5,7 @@ import com.aventstack.extentreports.markuputils.CodeLanguage;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 
-import utilities.DriverUtil;
+import utilities.CommonUtil;
 
 public class ExtentManager {
 	
@@ -38,9 +38,9 @@ public class ExtentManager {
 		ExtentManager.printNewLine();
 	}
 	
-	public static void logPassAndTakeScreenshot(DriverUtil util , String msg) {
+	public static void logPassAndTakeScreenshot(String screenshot , String msg) {
 		ExtentCucumberAdapter.getCurrentStep().pass(MarkupHelper.createLabel(msg, ExtentColor.GREEN));
-		ExtentCucumberAdapter.getCurrentStep().addScreenCaptureFromPath(util.takeScreenShotAsFile());
+		ExtentCucumberAdapter.getCurrentStep().addScreenCaptureFromPath(screenshot);
 		ExtentManager.printNewLine();
 	}
 	
@@ -49,10 +49,9 @@ public class ExtentManager {
 		ExtentManager.printNewLine();
 	}
 	
-	public static void logFailAndTakeScreenshot(DriverUtil util , String msg) {
+	public static void logFailAndAttachScreenshotFromPath(String screenshot , String msg) {
 		ExtentCucumberAdapter.getCurrentStep().fail(MarkupHelper.createLabel(msg, ExtentColor.RED));
-		ExtentCucumberAdapter.getCurrentStep().addScreenCaptureFromPath(util.takeScreenShotAsFile());
-		ExtentCucumberAdapter.getCurrentStep().addScreenCaptureFromBase64String(util.takeScreenShotInBase64());
+		ExtentCucumberAdapter.getCurrentStep().addScreenCaptureFromPath(screenshot);
 		ExtentManager.printNewLine();
 	}
 	

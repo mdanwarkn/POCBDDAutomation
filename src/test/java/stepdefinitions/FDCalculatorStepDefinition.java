@@ -8,7 +8,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import setup.TestContextSetUp;
 import utilities.ExcelUtil;
-import utilities.Utility;
+import utilities.StaticUtility;
 
 import static common.StaticClass.*;
 
@@ -29,18 +29,18 @@ public class FDCalculatorStepDefinition{
 
      @When("The User enters the Amount of fixed deposit as {string}")
      public void the_user_enters_the_amount_of_fixed_deposit_as(String amount) {
-    	 amount = Utility.getValueAssociatedWithTheColumn(context.dataSetRow, amount);
+    	 amount = StaticUtility.getValueAssociatedWithTheColumn(context.dataSetRow, amount);
     	 fdCalculatorPage.enterFixedDepositAmount(amount);
      }
      
      @When("The User enters the Tenure date as {string}")
      public void the_user_enters_the_tenure_date_as(String tenure) {
-    	 tenure = Utility.getValueAssociatedWithTheColumn(context.dataSetRow, tenure);
+    	 tenure = StaticUtility.getValueAssociatedWithTheColumn(context.dataSetRow, tenure);
          fdCalculatorPage.enterTenure(tenure);
      }
      @Then("Validate Rate of Interest is {string}")
      public void validate_rate_of_interest_is(String interest) {
-    	 interest = Utility.getValueAssociatedWithTheColumn(context.dataSetRow, interest);
+    	 interest = StaticUtility.getValueAssociatedWithTheColumn(context.dataSetRow, interest);
          fdCalculatorPage.validateRateOfInterest(interest);
      }
      @Then("Validate Maturity Date And Maturity Value")
@@ -50,7 +50,7 @@ public class FDCalculatorStepDefinition{
      @And("Store the FD results in output file")
      public void storeTheFDResultsInOutputFile() throws IOException, InvalidFormatException {
          String fileSource =  OUPUT_SHEET_PATH + WORKBOOK_NAME;
-         ExcelUtil.writeDataToExcelFile(fdCalculatorPage.currentRow, fileSource , SHEET_NAME);
+         ExcelUtil.writeDataToExcelFile(fdCalculatorPage.details, fileSource , SHEET_NAME);
      }
      
 }

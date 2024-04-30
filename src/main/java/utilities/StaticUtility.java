@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-public class Utility {
+public class StaticUtility {
 
 
     public static boolean IsListSortedInAscending(List<Integer> list){
@@ -44,5 +44,9 @@ public class Utility {
     	}else {
     		return parameter;
     	} 
+    }
+    
+    public static String formatNullToEmpty(String str){
+        return str==null?"":str;
     }
 }
